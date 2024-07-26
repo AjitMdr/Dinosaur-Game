@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    margin: 0;
+}
+
+#game {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    position: relative; /* Added to ensure the block's movement is relative to the game container */
+}
+
+#character {
+    width: 20px;
+    height: 50px;
+    background-color: cadetblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    }
+
+.animate {
+    animation: jump 1s linear;
+}
+
+@keyframes jump {
+    0% { top: 150px; }
+    25% { top: 100px; }
+    75% { top: 100px; }
+    100% { top: 100px; }
+}
+
+#block {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    bottom: 0; /* Changed from top to bottom */
+    right: 0; /* Start from the right edge of the game container */
+    animation: block 2s linear infinite;
+    outline: 2px solid red; /* Add red outline to the block */
+}
+
+@keyframes block {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: calc(100% - 30px); 
+    }
+}
+
+#scoreboard {
+    position: absolute;
+    top: 10px; /* Adjust position as needed */
+    left: 10px; /* Adjust position as needed */
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
